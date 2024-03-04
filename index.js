@@ -1,7 +1,8 @@
 const LetsApi = document.getElementById('LetsApi');
 
-const fetchCategories = async () => {
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+const fetchCategories = async (searchText) => {
+    // const bal = ` https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText} `
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText} `)
     const data = await res.json();
     allPostData = data.posts;
     console.log(allPostData);
@@ -56,7 +57,14 @@ const displayCard = allPostData => {
 
     })
 }
+// Search bar
+const searchBar = () => {
+   const searchField = document.getElementById('search');
+   const searchText = searchField.value;
+   
+   fetchCategories(searchText);
+   
+}
 
 
-
-fetchCategories();
+// fetchCategories();

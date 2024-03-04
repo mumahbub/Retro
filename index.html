@@ -39,8 +39,8 @@
                         class="text-cyan-400">ReTro</span> Forum</h1>
                 <h4 class="py-4 text-cyan-50">Share your favorite opinion and win and wp <br> forum coffee mug!</h4>
                 <label class=" input input-bordered flex items-center gap-2">
-                    <input type="text" class="grow" placeholder="Search" />
-                    <span class="bg-cyan-400 py-2 px-6 rounded-lg">Optional</span>
+                    <input id="search" type="text" class="grow" placeholder="Search" />
+                    <span onclick="searchBar()" class="bg-cyan-400 py-2 px-6 rounded-lg">Search</span>
                 </label>
             </div>
 
@@ -92,41 +92,7 @@
                 <div class="grid gap-10" id="LetsApi">
 
                     <div class="hero bg-base-200">
-                        <!-- <span class="relative flex h-3 w-3">
-                            <span
-                                class="bottom-16 right-60 absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
-                        </span>
-                        <div class="hero-content flex-col lg:flex-row ">
-                            <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg"
-                                class="max-w-sm w-24 rounded-lg shadow-2xl " />
-                            <div>
-                                <span class="flex gap-5">
-                                    <p># Music</p>
-                                    <p>Author : Awlad Hossain</p>
-                                </span>
-                                <h1 class="text-xl font-bold">10 Kids Unaware of Their Halloween Costume</h1>
-                                <p class="py-6">It’s one thing to subject yourself to ha Halloween costume mishap
-                                    <br> because, hey that’s your prerogative
-                                </p>
-                                <div class="flex gap-5">
-                                    <span class="flex gap-2">
-                                        <img src="images/Vector.png" alt="">
-                                        <p>560</p>
-                                    </span>
-                                    <span class="flex gap-2">
-                                        <img src="images/tabler-icon-eye.png" alt="">
-                                        <p>1,800</p>
-                                    </span>
-                                    <span class="flex gap-2">
-                                        <img src="images/tabler-icon-clock-hour-9.png" alt="">
-                                        <p>5 min</p>
-                                    </span>
-                                    <span class="lg:pl-72">
-                                        <img src="images/Group 40106.png" alt="">
-                                    </span>
-                                </div>
-                            </div>
-                        </div> -->
+
                     </div>
 
                 </div>
@@ -139,8 +105,10 @@
                             <h4 class="text-lg font-bold">Title</h4>
                         </div>
                         <div class="flex gap-2">
-                           <span> <img src="images/Frame.png" alt=""></span>
-                           <span> <h4>Mark as read <span id="read">10</span></h4></span>
+                            <span> <img src="images/Frame.png" alt=""></span>
+                            <span>
+                                <h4>Mark as read <span id="read">10</span></h4>
+                            </span>
                         </div>
                     </div>
 
@@ -151,6 +119,24 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Join Our Forum -->
+        <section class="mx-20 my-20 flex bg-slate-950 gap-52 rounded-2xl">
+            <div class="py-36 px-20">
+                <h1 class="text-5xl font-bold text-white pb-4">Join Our Forum</h1>
+                <p class="text-white pb-10">Share your favorite opinion and win and wp forum coffee mug! <br> Yes, you
+                    can run unit tests and view the results directly within the app. </p>
+                <button class="btn btn-primary px-10 text-xl">Primary</button>
+            </div>
+            <div class="py-20">
+                <img src="images/joinforum.png" alt="">
+            </div>
+        </section>
+
+        <!-- Latest Posts -->
+        <section>
+            
         </section>
 
     </main>
