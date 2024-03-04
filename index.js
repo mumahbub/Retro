@@ -1,8 +1,7 @@
-const LetsApi = document.getElementById('LetsApi');
 
 const fetchCategories = async (searchText) => {
-    // const bal = ` https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText} `
-    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText} `)
+    const bal = ` https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText} `
+    const res = await fetch(bal)
     const data = await res.json();
     allPostData = data.posts;
     console.log(allPostData);
@@ -10,11 +9,16 @@ const fetchCategories = async (searchText) => {
 
 }
 
+
+
+
 const displayCard = allPostData => {
+    const LetsApi = document.getElementById('LetsApi');
+    LetsApi.innerHTML = ``;
     allPostData.forEach(post => {
-        console.log(post)
         const postCard = document.createElement('div')
         postCard.classList = 'hero bg-base-200'
+
         postCard.innerHTML = `
         <span class="relative flex h-3 w-3">
         <span
@@ -57,14 +61,13 @@ const displayCard = allPostData => {
 
     })
 }
-// Search bar
-const searchBar = () => {
-   const searchField = document.getElementById('search');
-   const searchText = searchField.value;
-   
-   fetchCategories(searchText);
-   
-}
+
+document.getElementById('search-btn').addEventListener('click', function () {
+    const searchField = document.getElementById('search');
+    const searchText = searchField.value;
+    fetchCategories(searchText);
+})
+
+fetchCategories('');
 
 
-// fetchCategories();
