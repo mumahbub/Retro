@@ -9,6 +9,45 @@ const fetchCategories = async (searchText) => {
 
 }
 
+// ----------------
+const lastData = document.getElementById(`lastData`);
+const loadData = async () => {
+    const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
+    const data = await res.json();
+    console.log(data);
+    displaydata(data)
+}
+
+const displaydata = data =>{
+    data.forEach (data=>{
+        // console.log(data);\
+        const dataCard = document.createElement('div');
+        dataCard.classList = `ard card-compact w-96 bg-base-100 shadow-xl`;
+        dataCard.innerHTML = `
+        <figure><img src="${data.cover_image}"
+        alt="Shoes" /></figure>
+<div class="card-body">
+    <p class="flex gap-4"><img src="images/5.png" alt="">29 January 2024</p>
+    <h2 class="card-title font-bold">${data.title}
+    </h2>
+    <p>${data.description}</p>
+    <div>
+        <div class="avatar">
+            <div class="h-10 w-10 rounded-full">
+                <img src="${data.profile_image} "/>
+            </div>
+            <div>
+                <h4 class="font-bold">${data.author.name}</h4>
+            </div>
+            <p class="relative right-16"><br>${data.author.designation}</p>
+        </div>
+    </div>
+</div>
+        `;
+        lastData.appendChild(dataCard);
+
+    })
+}
 
 
 
@@ -71,3 +110,4 @@ document.getElementById('search-btn').addEventListener('click', function () {
 fetchCategories('');
 
 
+loadData();
