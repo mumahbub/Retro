@@ -9,7 +9,8 @@ const fetchCategories = async (searchText) => {
 
 }
 
-// ----------------
+// ------------------------------------
+
 const lastData = document.getElementById(`lastData`);
 const loadData = async () => {
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`);
@@ -18,8 +19,8 @@ const loadData = async () => {
     displaydata(data)
 }
 
-const displaydata = data =>{
-    data.forEach (data=>{
+const displaydata = data => {
+    data.forEach(data => {
         // console.log(data);\
         const dataCard = document.createElement('div');
         dataCard.classList = `ard card-compact w-96 bg-base-100 shadow-xl`;
@@ -48,7 +49,7 @@ const displaydata = data =>{
 
     })
 }
-
+// -------------------------------
 
 
 const displayCard = allPostData => {
@@ -58,9 +59,10 @@ const displayCard = allPostData => {
         const postCard = document.createElement('div')
         postCard.classList = 'hero bg-base-200'
 
-        postCard.innerHTML = `
+        postCard.innerHTML = ` 
+        <button>
         <span class="relative flex h-3 w-3">
-        <span
+        <span id="dot"
             class="bottom-14 right-64 absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
     </span>
     <div class="hero-content flex-col lg:flex-row ">
@@ -94,7 +96,8 @@ const displayCard = allPostData => {
             </div>
         </div>
     </div>
-        `;
+    </button>
+    `;
         LetsApi.appendChild(postCard);
 
 
@@ -106,6 +109,18 @@ document.getElementById('search-btn').addEventListener('click', function () {
     const searchText = searchField.value;
     fetchCategories(searchText);
 })
+
+// ----------click---------------------------
+btn = document.getElementById('api_btn').addEventListener('click', function (e) {
+    console.log("click")
+})
+
+
+
+
+
+
+
 
 fetchCategories('');
 
