@@ -60,7 +60,6 @@ const displayCard = allPostData => {
         postCard.classList = 'hero bg-base-200'
 
         postCard.innerHTML = ` 
-        <button>
         <span class="relative flex h-3 w-3">
         <span id="dot"
             class="bottom-14 right-64 absolute inline-flex h-full w-full rounded-full bg-red-600 opacity-75"></span>
@@ -96,7 +95,6 @@ const displayCard = allPostData => {
             </div>
         </div>
     </div>
-    </button>
     `;
         LetsApi.appendChild(postCard);
 
@@ -111,18 +109,12 @@ document.getElementById('search-btn').addEventListener('click', function () {
 })
 
 // ----------click---------------------------
-btn = document.getElementById('api_btn').addEventListener('click', function (e) {
+btn = document.getElementById('LetsApi').addEventListener('click', function (e) {
     console.log("click")
+
 })
 
 
-
-
-
-
-
-
 fetchCategories('');
-
 
 loadData();
